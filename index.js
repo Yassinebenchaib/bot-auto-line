@@ -48,5 +48,22 @@ client.on('message', message => {
       .catch(console.error);
   }
 });
+const express = require('express');
 
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello Express app!')
+});
+
+app.listen(3000, () => {
+  console.log('server started');
+});
+app.post("/uptime_devtools", (req, res) => {
+ console.log("uptime is run by Developer tools")
+  res.send({
+    msg: "done uptime",
+    access: "by_devtools",
+  })
+})
 // code by wick studio
